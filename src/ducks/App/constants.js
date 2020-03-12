@@ -1,0 +1,7 @@
+const GET_USER_DETAILS = 'App/GET_USER_DETAILS';
+const SET_USER_DETAILS = 'App/SET_USER_DETAILS';
+
+export default {
+  GET_USER_DETAILS,
+  SET_USER_DETAILS,
+};
