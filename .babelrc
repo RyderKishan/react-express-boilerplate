@@ -18,6 +18,15 @@
         "regenerator": true,
         "useESModules": false
       }
+    ],
+    [
+      "babel-plugin-react-css-modules",
+      {
+        "context": "./src",
+        "generateScopedName": "[path][name]__[local]",
+        "handleMissingStyleName": "throw",
+        "webpackHotModuleReloading": true
+      }
     ]
   ]
 }

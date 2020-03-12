@@ -1,6 +1,6 @@
 import React, { useEffect, shallowEqual } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { withRouter, Route } from 'react-router-dom';
+import { withRouter, Route, Switch } from 'react-router-dom';
 
 import Operations from '../../ducks/App/operations';
 import Selectors from '../../ducks/App/selectors';
@@ -25,10 +25,16 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <Header />
-      <Route path="/" render={() => <Home userDetails={userDetails} />} />
-      <Route path="/contact" render={() => <div>Contact</div>} />
-      <Route path="/profile" render={() => <div>Profile</div>} />
+      <header>
+        <Header userDetails={userDetails} />
+      </header>
+      <article className="body">
+        <Switch>
+          <Route path="/" exact render={() => <Home />} />
+          <Route path="/contact" render={() => <div>Contact</div>} />
+          <Route path="/profile" render={() => <div>Profile</div>} />
+        </Switch>
+      </article>
     </div>
   );
 };

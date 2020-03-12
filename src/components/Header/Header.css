@@ -1,36 +1,12 @@
 .header {
-  background: beige;
   height: 70px;
-  display: flex;
-  justify-content: space-between;
+  background: aliceblue;
+  line-height: 70px;
   padding: 0 16px;
-  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
-}
-
-.header .user-details {
-  width: auto;
-  margin: auto 0px;
-  text-align: right;
-}
-
-.header .app-details {
-  width: auto;
-  font-size: large;
-  margin: auto 0px;
-}
-
-.user-details {
   display: flex;
+  flex-direction: row-reverse;
 }
 
-.user-details .info {
-  margin-right: 8px;
-}
-
-.info .name {
-  font-size: large;
-}
-
-.info .email {
-  font-size: smaller;
+.body {
+  height: calc(100% - 70px);
 }

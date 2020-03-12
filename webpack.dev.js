@@ -17,11 +17,11 @@ module.exports = merge(common, {
     writeToDisk: true,
     contentBase: 'dist',
     historyApiFallback: true,
-    liveReload: false,
+    liveReload: true,
     port: PORT,
-    proxy: {
-      '/api': 'http://localhost:7400',
-    },
+    // proxy: {
+    //   '*': 'http://localhost:3000',
+    // },
   },
   plugins: [
     new MiniCssExtractPlugin({

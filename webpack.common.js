@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackManifestPlugin = require('webpack-manifest-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isDevMode = process.env.NODE_ENV !== 'production';
@@ -42,7 +44,16 @@ module.exports = {
               hmr: isDevMode,
             },
           },
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[path][name]__[local]',
+                context: path.resolve(__dirname, 'src'),
+                hashPrefix: 'my-custom-hash',
+              },
+            }
+          },
           'sass-loader',
         ],
       },
@@ -65,11 +76,14 @@ module.exports = {
   },
   target: 'web',
   plugins: [
+    new CleanWebpackPlugin(),
     new WebpackManifestPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/asserts/template.html',
-      excludeChunks: ['server'],
+      template: 'src/assets/template.html',
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/antenna.png',
     }),
   ],
 };

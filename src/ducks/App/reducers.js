@@ -7,6 +7,7 @@ const AppReducer = (state = {}, action) => {
         ...state,
         userDetails: action.userDetails,
       };
+
     default:
       return state;
   }

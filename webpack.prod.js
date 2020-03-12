@@ -3,7 +3,6 @@ const merge = require('webpack-merge');
 
 const CompressionPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { HashedModuleIdsPlugin } = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require('./webpack.common.js');
@@ -16,6 +15,9 @@ module.exports = merge(common, {
     chunkFilename: '[name].[chunkhash].chunk.js',
   },
   mode: 'production',
+  // optimization: {
+  //   minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  // },
   optimization: {
     minimize: true,
     minimizer: [
@@ -59,7 +61,6 @@ module.exports = merge(common, {
     },
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new CompressionPlugin({
       algorithm: 'gzip',
       test: /\.js$|\.css$|\.html$/,
