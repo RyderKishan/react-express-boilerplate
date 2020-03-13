@@ -4,6 +4,7 @@
   "description": "Boilerplate code for React with express",
   "main": "index.js",
   "scripts": {
+    "server": "node api/server.js",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
