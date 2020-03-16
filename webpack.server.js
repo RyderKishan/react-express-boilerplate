@@ -4,7 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: {
-    server: path.join(__dirname, './api/src/server.js'),
+    server: path.join(__dirname, './api/server.js'),
   },
   output: {
     path: path.resolve(__dirname, 'build'),

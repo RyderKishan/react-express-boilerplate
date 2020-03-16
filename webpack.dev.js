@@ -9,19 +9,19 @@ const PORT = 7400;
 module.exports = merge(common, {
   mode: 'development',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: '[name].js',
   },
   devtool: 'source-map',
   devServer: {
     writeToDisk: true,
-    contentBase: 'dist',
+    contentBase: 'build',
     historyApiFallback: true,
     liveReload: true,
     port: PORT,
-    proxy: {
-      '*': 'http://localhost:7400',
-    },
+    // proxy: {
+    //   '*': 'http://localhost:7400',
+    // },
   },
   plugins: [
     new MiniCssExtractPlugin({

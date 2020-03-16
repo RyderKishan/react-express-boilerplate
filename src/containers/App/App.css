@@ -17,3 +17,20 @@ body {
   height: 100%;
   width: 100%;
 }
+
+header {
+  height: 70px;
+  background: aliceblue;
+  line-height: 70px;
+  padding: 0 16px;
+}
+
+article {
+  height: calc(100% - 70px);
+  overflow: auto;
+}
+
+/* @font-face {
+  font-family: "Futura BK BT";
+  src: url("public/fonts/Futura.ttf");
+} */

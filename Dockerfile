@@ -13,5 +13,5 @@ COPY --from=builder ["/usr/src/app/package.json", "/usr/src/app/"]
 WORKDIR /usr/src/app
 # RUN ["chmod", "+x", "setenv.prod.sh"]
 RUN npm install --production
-ENTRYPOINT ["/usr/local/bin/npm", "run", "server"]
+ENTRYPOINT ["/usr/local/bin/npm", "run", "server:prod"]
 EXPOSE 7400

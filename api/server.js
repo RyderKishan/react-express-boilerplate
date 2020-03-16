@@ -6,14 +6,13 @@ const morgan = require('morgan');
 
 // const Logger = require('./helpers/logger');
 const config = require('./config');
+// const auth = require('./auth');
 // const options = require('./config/options');
-// const routes = require('./routes');
+const routes = require('./routes');
 
 const PORT = config.serverPort;
 const HTML_FILE = path.join(__dirname, '../build/index.html');
 const app = express();
-
-const onServerUp = () => console.log(`Server UP ==> 🌎  Listening on port ${PORT}`);
 
 // app.set('trust proxy', 1);
 
@@ -23,7 +22,7 @@ app.use(morgan('tiny'));
 // app.use(options.falseSessionHandler);
 app.use(express.static(path.join(__dirname, '../build')));
 
-// routes.bind(app);
+routes.bind(app);
 
 app.get('/health', (req, res) => res.send('Server is up and running'));
 app.get('*', (req, res) => {
@@ -35,4 +34,4 @@ app.get('*', (req, res) => {
   }
 });
 
-app.listen(PORT, onServerUp);
+app.listen(PORT, () => console.log(`Server UP ==> 🌎  Listening on port ${PORT}`));

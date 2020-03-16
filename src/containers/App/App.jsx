@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <Header userDetails={userDetails} />
+        <Header appName="React Webpack" userDetails={userDetails} />
       </header>
       <article className="body">
         <Switch>

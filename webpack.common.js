@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackManifestPlugin = require('webpack-manifest-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -44,16 +44,7 @@ module.exports = {
               hmr: isDevMode,
             },
           },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[path][name]__[local]',
-                context: path.resolve(__dirname, 'src'),
-                hashPrefix: 'my-custom-hash',
-              },
-            }
-          },
+          'css-loader',
           'sass-loader',
         ],
       },
@@ -76,8 +67,13 @@ module.exports = {
   },
   target: 'web',
   plugins: [
-    new CleanWebpackPlugin(),
     new WebpackManifestPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(__dirname, './src/public'),
+        to: './public',
+      },
+    ]),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/assets/template.html',

@@ -1,35 +1,19 @@
 const passport = require('passport');
-
 const strategies = require('./strategies');
-const config = require('../config');
-
-const strategy = config.authenticationStrategy;
-
-const localUser = {
-  name: 'Loacl User',
-  email: 'localuser@dev.com',
-  id: 'AW123',
-};
+const { authenticationStrategy } = require('../config');
 
 passport.protected = (req, res, next) => {
   if (req.isAuthenticated()) {
-    next();
-  } else {
-    res.redirect('/health');
+    return next();
   }
+  res.redirect('/login');
+  return null;
 };
 
-passport.serializeUser((user, cb) => {
-  cb(null, user.id);
-});
+passport.serializeUser((user, done) => done(null, user));
 
-passport.deserializeUser((id, cb) => {
-  if (localUser.id === id) {
-    return cb(null, localUser);
-  }
-  return cb(null, false);
-});
+passport.deserializeUser((id, done) => done(null, id));
 
-passport.use(strategies[strategy]);
+passport.use(strategies[authenticationStrategy].strategy);
 
 module.exports = passport;

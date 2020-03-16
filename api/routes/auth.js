@@ -1,48 +1,56 @@
 const router = require('express').Router();
 const passport = require('passport');
-const Cookies = require('universal-cookie');
+const { authenticationStrategy } = require('../config');
+const strategies = require('../auth/strategies');
 
-const onSuccessLogin = (req, res) => {
-  res.cookie('user', {
-    id: 'local',
-    name: res.req.user.name,
-    email: res.req.user.email,
+router.get('/login',
+  (req, res, next) => {
+    passport.authenticate(strategies[authenticationStrategy].id,
+      {
+        response: res,
+        prompt: 'login',
+        failureRedirect: '/loginfailed',
+        failureFlash: true,
+        successRedirect: '/',
+      })(req, res, next);
   });
-  res.send({
-    id: 'local',
-    name: res.req.user.name,
-    email: res.req.user.email,
-  });
-};
 
-router.get('/currentuser', (req, res) => {
-  const cookies = new Cookies(req.headers.cookie);
-  const userDetails = cookies.get('user');
-  res.json(userDetails);
+router.post('/token',
+  (req, res, next) => {
+    passport.authenticate(strategies[authenticationStrategy].id,
+      {
+        response: res,
+        failureRedirect: '/tokenfailed',
+        failureFlash: true,
+        successRedirect: '/',
+      })(req, res, next);
+  });
+
+router.get('/token',
+  (req, res, next) => {
+    passport.authenticate(strategies[authStrategy].id,
+      {
+        response: res,
+        failureRedirect: '/tokenfailed',
+        failureFlash: true,
+        successRedirect: '/',
+      })(req, res, next);
+  });
+
+router.get('/logOut',
+  (req, res) => {
+    req.session.destroy(() => {
+      req.logout();
+      res.redirect('/');
+    });
+  });
+
+router.get('/tokenfailed', (req, res) => {
+  res.json('Token failed');
 });
 
-router.post(
-  '/login',
-  passport.authenticate('local'),
-  onSuccessLogin,
-);
-
-router.get(
-  '/auth/google',
-  passport.authenticate('google', { scope: ['profile'] }),
-);
-router.get(
-  '/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/', session: false }),
-  (req, res) => {
-    const { user } = req;
-    res.cookie('user', {
-      id: user.id,
-      name: user.displayName,
-      email: user.email,
-    });
-    res.redirect(`http://localhost:7400?token=${user.id}`);
-  },
-);
+router.get('/loginfailed', (req, res) => {
+  res.json('Login failed');
+});
 
 module.exports = router;
