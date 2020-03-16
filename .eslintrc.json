@@ -8,7 +8,14 @@
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
-    "document": true
+    "document": true,
+    "test": true,
+    "it": true,
+    "expect": true,
+    "jest": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "describe": true
   },
   "parserOptions": {
     "ecmaFeatures": {

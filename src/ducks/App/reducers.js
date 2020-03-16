@@ -1,4 +1,4 @@
-import Constants from './constants';
+import * as Constants from './constants';
 
 const AppReducer = (state = {}, action) => {
   switch (action.type) {

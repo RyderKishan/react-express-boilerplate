@@ -15,14 +15,12 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
-          failOnWarning: true,
           failOnError: true,
-          emitWarning: true,
-          emitError: true,
+          failOnWarning: false,
         },
       },
       {

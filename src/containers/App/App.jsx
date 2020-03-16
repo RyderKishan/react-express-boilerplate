@@ -8,6 +8,7 @@ import Selectors from '../../ducks/App/selectors';
 import './App.css';
 import Home from '../Home';
 import Header from '../../components/Header';
+import FallBack from '../../components/FallBack';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/" exact render={() => <Home />} />
           <Route path="/contact" render={() => <div>Contact</div>} />
           <Route path="/profile" render={() => <div>Profile</div>} />
+          <Route component={FallBack} />
         </Switch>
       </article>
     </div>

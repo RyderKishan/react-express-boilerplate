@@ -4,13 +4,13 @@ import {
   takeLatest,
   all,
 } from 'redux-saga/effects';
-import Actions from './actions';
-import Constants from './constants';
-import API from '../../api';
+import * as Actions from './actions';
+import * as Constants from './constants';
+import Api from '../../api';
 
 function* getPosts() {
   try {
-    const posts = yield call(API.get, 'https://jsonplaceholder.typicode.com/posts');
+    const posts = yield call(Api.get, '/posts');
     yield put(Actions.setPosts(posts));
   } catch (error) {
     yield put(Actions.setPosts([]));
@@ -26,3 +26,9 @@ export default function* homeSagas() {
     watchGetPosts(),
   ]);
 }
+
+export const TestExports = {
+  homeSagas,
+  watchGetPosts,
+  getPosts,
+};

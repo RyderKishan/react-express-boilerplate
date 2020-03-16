@@ -28,7 +28,7 @@ router.post('/token',
 
 router.get('/token',
   (req, res, next) => {
-    passport.authenticate(strategies[authStrategy].id,
+    passport.authenticate(strategies[authenticationStrategy].id,
       {
         response: res,
         failureRedirect: '/tokenfailed',

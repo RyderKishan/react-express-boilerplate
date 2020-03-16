@@ -7,7 +7,7 @@ const outputFormat = winston.format.printf(
 const logFormat = winston.format.combine(
   winston.format.timestamp(),
   winston.format.colorize(),
-  winston.format.label({ label: 'Webpack ::' }),
+  winston.format.label({ label: 'Express ::' }),
 );
 
 const logger = winston.createLogger({
@@ -23,7 +23,6 @@ const logger = winston.createLogger({
     }),
   ],
 });
-
 
 logger.stream = {
   write(message) {

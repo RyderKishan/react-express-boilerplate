@@ -1,4 +1,4 @@
-import Constants from './constants';
+import * as Constants from './constants';
 
 const getPosts = () => ({
   type: Constants.GET_POSTS,
@@ -9,7 +9,7 @@ const setPosts = (posts) => ({
   posts,
 });
 
-export default {
+export {
   getPosts,
   setPosts,
 };

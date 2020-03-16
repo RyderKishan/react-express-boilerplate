@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const common = require('./webpack.common.js');
 
-const PORT = 7400;
+const PORT = 3000;
 
 module.exports = merge(common, {
   mode: 'development',
@@ -14,10 +14,13 @@ module.exports = merge(common, {
   },
   devtool: 'source-map',
   devServer: {
+    clientLogLevel: 'debug',
+    compress: true,
+    open: false,
     writeToDisk: true,
     contentBase: 'build',
     historyApiFallback: true,
-    liveReload: true,
+    liveReload: false,
     port: PORT,
     // proxy: {
     //   '*': 'http://localhost:7400',

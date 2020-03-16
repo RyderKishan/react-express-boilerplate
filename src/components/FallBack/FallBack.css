@@ -1,0 +1,10 @@
+.unauthpage {
+  padding: 32px;
+}
+
+.authHeader {
+  height: 70px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 70px;
+}
