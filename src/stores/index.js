@@ -13,7 +13,10 @@ export default function configureStore(preloadedState) {
 
   // Push all the middlewares here
   middlewares.push(sagaMiddleware);
-  middlewares.push(logger);
+  if (!PROD_ENVS.includes(process.env.NODE_ENV)) {
+    // Push all non prod middlewares here
+    middlewares.push(logger);
+  }
   const enhancers = [applyMiddleware(...middlewares)];
 
   // composeWithDevTools is only for the Development environment
