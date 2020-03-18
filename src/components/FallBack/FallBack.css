@@ -1,8 +1,8 @@
-.unauthpage {
+.FallBack {
   padding: 32px;
 }
 
-.authHeader {
+.FallBackHeader {
   height: 70px;
   font-size: 18px;
   font-weight: bold;

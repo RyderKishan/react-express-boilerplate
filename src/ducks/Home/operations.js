@@ -1,4 +1,4 @@
-import Actions from './actions';
+import * as Actions from './actions';
 
 const dispatchGetPosts = (dispatch) => () => {
   dispatch(Actions.getPosts());

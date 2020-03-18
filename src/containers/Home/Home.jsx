@@ -26,11 +26,12 @@ const Home = () => {
   useEffect(() => {
     getPosts();
   }, []);
+  console.log('posts', posts);
   return (
     <div className="Home">
       Home
       <div className={classes.postContainer}>
-        {posts.map((post) => (
+        {posts && posts.map((post) => (
           <Card className={classes.root} key={post.id}>
             <CardActionArea>
               <CardContent>

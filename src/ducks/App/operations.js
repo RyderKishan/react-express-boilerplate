@@ -1,4 +1,4 @@
-import Actions from './actions';
+import * as Actions from './actions';
 
 const dispatchGetUserDetails = (dispatch) => () => {
   dispatch(Actions.getUserDetails());

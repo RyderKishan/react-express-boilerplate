@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> - Snapshot Tests Renderer Snapshot renderer 1`] = `
+<div
+  className="App"
+>
+  <header>
+    <div
+      className="makeStyles-root-1"
+    >
+      <div>
+        React Webpack
+      </div>
+      <div>
+        Login User
+      </div>
+    </div>
+  </header>
+  <article
+    className="body"
+  >
+    <div
+      className="Home"
+    >
+      Home
+      <div
+        className="makeStyles-postContainer-5"
+      />
+    </div>
+  </article>
+</div>
+`;

@@ -29,9 +29,9 @@ const getErrorMessage = (location) => {
 const FallBack = ({ location }) => {
   const message = getErrorMessage(location);
   return (
-    <div className="unauthpage">
-      <div className="authHeader">{message.code}</div>
-      <div>{message.text}</div>
+    <div className="FallBack">
+      <div className="FallBackHeader">{message.code}</div>
+      <div className="FallBackText">{message.text}</div>
     </div>
   );
 };

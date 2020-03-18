@@ -6,7 +6,7 @@ function CustomException(error) {
   return {
     message: R.pathOr('', ['message'], error),
     status: R.pathOr(500, ['response', 'status'], error),
-    url: R.pathOr(500, ['response', 'config', 'url'], error),
+    url: R.pathOr('', ['response', 'config', 'url'], error),
     statusText: R.pathOr('', ['response', 'statusText'], error),
     data: R.pathOr(null, ['response', 'data'], error),
   };

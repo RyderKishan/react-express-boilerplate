@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FallBack /> - Snapshot Tests Renderer Snapshot renderer 1`] = `
+<div
+  className="FallBack"
+>
+  <div
+    className="FallBackHeader"
+  >
+    ERRCODE: LOGGED_OUT
+  </div>
+  <div
+    className="FallBackText"
+  >
+    You have been logged out successfully
+  </div>
+</div>
+`;

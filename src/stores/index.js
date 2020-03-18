@@ -5,7 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
-import Constants from '../constants';
+import { PROD_ENVS } from '../constants';
 
 export default function configureStore(preloadedState) {
   const middlewares = [];
@@ -18,7 +18,7 @@ export default function configureStore(preloadedState) {
 
   // composeWithDevTools is only for the Development environment
   let composedEnhancers = {};
-  if (Constants.PROD_ENVS.includes(process.env.NODE_ENV)) {
+  if (PROD_ENVS.includes(process.env.NODE_ENV)) {
     composedEnhancers = compose(...enhancers);
   } else {
     composedEnhancers = composeWithDevTools(...enhancers);

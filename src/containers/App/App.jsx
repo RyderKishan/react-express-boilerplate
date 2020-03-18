@@ -32,8 +32,8 @@ const App = () => {
       <article className="body">
         <Switch>
           <Route path="/" exact render={() => <Home />} />
-          <Route path="/contact" render={() => <div>Contact</div>} />
-          <Route path="/profile" render={() => <div>Profile</div>} />
+          <Route path="/contact" render={() => <div className="Contact">Contact</div>} />
+          <Route path="/profile" render={() => <div className="Profile">Profile</div>} />
           <Route component={FallBack} />
         </Switch>
       </article>

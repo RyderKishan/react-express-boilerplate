@@ -34,4 +34,4 @@ export default function* appSagas() {
 export const TestExports = {
   watchGetUserDetails,
   getUserDetails,
-}
+};
