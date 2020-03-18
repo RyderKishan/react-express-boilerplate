@@ -9,10 +9,10 @@
     "server": "nodemon api/server.js",
     "server:prod": "node api/server.js",
     "client": "webpack-dev-server --config webpack.dev.js",
-    "start": "run-p clean server client",
+    "start": "run-p server client",
     "build:app": "webpack --config webpack.prod.js",
     "build:server": "webpack --config webpack.server.js",
-    "build": "run-p clean build:app build:server"
+    "build": "run-s build:app build:server"
   },
   "repository": {
     "type": "git",
@@ -64,6 +64,7 @@
     "@redux-saga/testing-utils": "^1.1.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-css-modules": "^5.2.6",
+    "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^3.1.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",

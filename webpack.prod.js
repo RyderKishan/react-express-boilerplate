@@ -1,6 +1,5 @@
 const path = require('path');
 const merge = require('webpack-merge');
-
 const CompressionPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { HashedModuleIdsPlugin } = require('webpack');
