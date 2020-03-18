@@ -26,6 +26,7 @@ const Home = () => {
   useEffect(() => {
     getPosts();
   }, []);
+  // eslint-disable-next-line no-console
   console.log('posts', posts);
   return (
     <div className="Home">

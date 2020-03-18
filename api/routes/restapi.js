@@ -7,6 +7,10 @@ const API = require('../helpers/api');
 const config = require('../config');
 const { exceptionHandler } = require('../utils');
 
+router.get('/env', (req, res) => {
+  res.json(process.env);
+});
+
 router.get('/users', (req, res) => {
   const uri = `${config.restapi}/users`;
   LOG.info(`URI : ${uri}`);

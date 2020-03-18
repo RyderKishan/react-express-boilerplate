@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const session = require('express-session');
 const { v4: uuid } = require('uuid');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const Logger = require('./helpers/logger');
 const config = require('./config');
