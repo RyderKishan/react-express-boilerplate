@@ -1,18 +1,35 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render } from 'enzyme';
+import { render, mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 
 import App from '.';
+import * as Actions from '../../ducks/App/actions';
 import Mocks from '../../../api/stubs/mocks';
 // import Operations from '../../ducks/App/operations';
 
+const mockDispatch = jest.fn();
+
 jest.mock('react-redux', () => ({
-  useDispatch: () => { },
+  useDispatch: () => mockDispatch,
   useSelector: () => ({
     userDetails: Mocks.userDetails,
   }),
 }));
+
+describe('<App /> - Hooks Test', () => {
+  const mockedDispatch = jest.fn();
+  mockDispatch.mockReturnValue(mockedDispatch);
+  const wrapper = mount(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>,
+  );
+  it('useEffect', () => {
+    expect(wrapper.find('.App').exists()).toBe(true);
+    expect(mockDispatch).toHaveBeenCalledWith(Actions.getUserDetails());
+  });
+});
 
 describe('<App /> - Snapshot Tests Renderer', () => {
   const tree = renderer.create(

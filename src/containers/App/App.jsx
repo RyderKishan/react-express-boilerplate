@@ -2,8 +2,8 @@ import React, { useEffect, shallowEqual } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter, Route, Switch } from 'react-router-dom';
 
-import Operations from '../../ducks/App/operations';
-import Selectors from '../../ducks/App/selectors';
+import * as Actions from '../../ducks/App/actions';
+import * as Selectors from '../../ducks/App/selectors';
 
 import './App.css';
 import Home from '../Home';
@@ -12,7 +12,7 @@ import FallBack from '../../components/FallBack';
 
 const App = () => {
   const dispatch = useDispatch();
-  const getUserDetails = Operations.dispatchGetUserDetails(dispatch);
+  const getUserDetails = dispatch(Actions.getUserDetails());
   const {
     userDetails,
   } = useSelector(

@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import Operations from '../../ducks/Home/operations';
+import * as Actions from '../../ducks/Home/actions';
 import Selectors from '../../ducks/Home/selectors';
 
 import useStyles from './styles';
@@ -16,7 +16,7 @@ import './Home.css';
 const Home = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const getPosts = Operations.dispatchGetPosts(dispatch);
+  const getPosts = dispatch(Actions.getPosts());
   const { posts } = useSelector(
     (state) => ({
       posts: Selectors.posts(state),

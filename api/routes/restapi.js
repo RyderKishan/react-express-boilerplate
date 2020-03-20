@@ -8,7 +8,8 @@ const config = require('../config');
 const { exceptionHandler } = require('../utils');
 
 router.get('/env', (req, res) => {
-  res.json(process.env);
+  const { value } = req.query;
+  res.json(value ? process.env[value] : process.env);
 });
 
 router.get('/users', (req, res) => {
