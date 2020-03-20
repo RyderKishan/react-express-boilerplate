@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 import * as Actions from '../../ducks/Home/actions';
-import Selectors from '../../ducks/Home/selectors';
+import * as Selectors from '../../ducks/Home/selectors';
 
 import useStyles from './styles';
 import './Home.css';
@@ -17,17 +17,13 @@ const Home = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const getPosts = dispatch(Actions.getPosts());
-  const { posts } = useSelector(
-    (state) => ({
-      posts: Selectors.posts(state),
-    }),
-    shallowEqual,
-  );
+  const { posts } = useSelector((state) => ({
+    posts: Selectors.posts(state),
+  }),
+  shallowEqual);
   useEffect(() => {
     getPosts();
   }, []);
-  // eslint-disable-next-line no-console
-  console.log('posts', posts);
   return (
     <div className="Home">
       Home

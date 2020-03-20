@@ -15,12 +15,10 @@ const App = () => {
   const getUserDetails = dispatch(Actions.getUserDetails());
   const {
     userDetails,
-  } = useSelector(
-    (state) => ({
-      userDetails: Selectors.userDetails(state),
-    }),
-    shallowEqual,
-  );
+  } = useSelector((state) => ({
+    userDetails: Selectors.userDetails(state),
+  }),
+  shallowEqual);
   useEffect(() => {
     getUserDetails();
   }, []);
