@@ -12,7 +12,7 @@ import FallBack from '../../components/FallBack';
 
 const App = () => {
   const dispatch = useDispatch();
-  const getUserDetails = dispatch(Actions.getUserDetails());
+  const getUserDetails = () => dispatch(Actions.getUserDetails());
   const {
     userDetails,
   } = useSelector((state) => ({
@@ -31,7 +31,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact render={() => <Home />} />
           <Route path="/contact" render={() => <div className="Contact">Contact</div>} />
-          <Route path="/profile" render={() => <div className="Profile">Profile</div>} />
+          <Route path="/about" render={() => <div className="Profile">Profile</div>} />
           <Route component={FallBack} />
         </Switch>
       </article>

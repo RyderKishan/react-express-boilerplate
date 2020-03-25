@@ -16,6 +16,7 @@
     "beforeEach": true,
     "beforeAll": true,
     "afterEach": true,
+    "window": true,
     "describe": true
   },
   "parserOptions": {

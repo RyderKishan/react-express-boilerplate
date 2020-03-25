@@ -1,0 +1,39 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.root svg {
+  cursor: pointer;
+}
+
+.searchArea {
+  width: 0;
+  overflow: hidden;
+  display: flex;
+  animation: shrink 0.4s;
+}
+
+.showSearch {
+  animation: expand 0.4s;
+  width: 256px;
+  margin-right: 8px;
+}
+
+@keyframes expand {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 256px;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 256px;
+  }
+  100% {
+    width: 0px;
+  }
+}

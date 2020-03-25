@@ -1,3 +1,10 @@
 .Home {
   padding: 16px;
+  flex: 1;
+}
+
+.Spin-Container {
+  height: 100%;
+  place-content: center;
+  display: grid;
 }

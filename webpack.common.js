@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackManifestPlugin = require('webpack-manifest-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDevMode = process.env.NODE_ENV !== 'production';
 
@@ -66,7 +65,6 @@ module.exports = {
   },
   target: 'web',
   plugins: [
-    new CleanWebpackPlugin(),
     new WebpackManifestPlugin(),
     new CopyWebpackPlugin([
       {
@@ -79,7 +77,7 @@ module.exports = {
       template: 'src/assets/template.html',
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/assets/antenna.png',
+      logo: './src/assets/gk_logo.png',
     }),
   ],
 };

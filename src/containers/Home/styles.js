@@ -12,6 +12,9 @@ const useStyles = makeStyles({
     display: 'flex',
     flexWrap: 'wrap',
   },
+  progress: {
+    color: '#0D475E',
+  },
 });
 
 export default useStyles;

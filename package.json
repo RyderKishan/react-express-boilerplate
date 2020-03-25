@@ -31,6 +31,7 @@
   "homepage": "https://github.com/RyderKishan/react-express-boilerplate#readme",
   "dependencies": {
     "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

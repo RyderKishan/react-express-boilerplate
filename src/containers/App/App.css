@@ -1,5 +1,5 @@
 body {
-  font-family: Lato, sans-serif;
+  font-family: 'Futura BK BT', Arial, sans-serif !important;
   font-size: 14px;
   margin: 0;
   height: 100vh;
@@ -20,17 +20,18 @@ body {
 
 header {
   height: 70px;
-  background: aliceblue;
-  line-height: 70px;
+  background: #0D475E;
   padding: 0 16px;
+  color: white;
 }
 
 article {
   height: calc(100% - 70px);
+  display: flex;
   overflow: auto;
 }
 
-/* @font-face {
+@font-face {
   font-family: "Futura BK BT";
-  src: url("public/fonts/Futura.ttf");
-} */
+  src: url("/public/fonts/Futura.ttf");
+}
