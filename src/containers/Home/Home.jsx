@@ -1,4 +1,4 @@
-import React, { useEffect, shallowEqual } from 'react';
+import React, { shallowEqual } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from '@material-ui/core/Card';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -18,49 +18,77 @@ const Home = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const getPosts = () => dispatch(Actions.getPosts());
-  const { posts } = useSelector((state) => ({
+  const setPosts = (posts) => dispatch(Actions.setPosts(posts));
+  const { posts, isPostFetching } = useSelector((state) => ({
     posts: Selectors.posts(state),
+    isPostFetching: Selectors.isPostFetching(state),
   }),
   shallowEqual);
-  useEffect(() => {
-    getPosts();
-  }, []);
+  // useEffect(() => {
+  //   getPosts();
+  // }, []);
   return (
     <div className="Home">
-      {
-        posts && posts.length > 0 ? (
-          <div className={classes.postContainer}>
-            {
-              posts.map((post) => (
-                <Card className={classes.root} key={post.id}>
-                  <CardActionArea>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        {post.title}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                        {post.body}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      Share
-                    </Button>
-                    <Button size="small" color="primary">
-                      Learn More
-                    </Button>
-                  </CardActions>
-                </Card>
-              ))
-            }
-          </div>
-        ) : (
-          <div className="Spin-Container">
-            <CircularProgress className={classes.progress} />
-          </div>
-        )
-      }
+      <div className="actions">
+        <Button
+          id="fetch-results"
+          disabled={isPostFetching}
+          variant="contained"
+          color="primary"
+          onClick={getPosts}
+        >
+          Fetch Results
+        </Button>
+        <Button
+          id="clear-results"
+          disabled={posts && posts.length <= 0}
+          variant="contained"
+          color="primary"
+          onClick={() => setPosts([])}
+        >
+          Clear Results
+        </Button>
+      </div>
+      <div className="results">
+        {
+          !isPostFetching > 0 ? (
+            <div className={classes.postContainer}>
+              {
+                posts && posts.length > 0 ? posts.map((post) => (
+                  <Card className={classes.root} key={post.id}>
+                    <CardActionArea>
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {post.title}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                          {post.body}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" color="primary">
+                        Share
+                      </Button>
+                      <Button size="small" color="primary">
+                        Learn More
+                      </Button>
+                    </CardActions>
+                  </Card>
+                )) : (
+                  <div className="make-center">
+                    No Results
+                  </div>
+                )
+              }
+            </div>
+          ) : (
+            <div className="make-center">
+              <CircularProgress className={classes.progress} />
+            </div>
+          )
+        }
+      </div>
     </div>
   );
 };

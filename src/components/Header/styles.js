@@ -8,30 +8,30 @@ const useStyles = makeStyles({
     alignItems: 'center',
   },
   appName: {
-    fontSize: '18px',
+    fontSize: '10.5em',
   },
   image: {
-    height: '48px',
+    height: '3em',
     cursor: 'pointer',
   },
   loginUser: {
     display: 'flex',
     alignItems: 'center',
     '& > span': {
-      marginRight: '8px',
+      marginRight: '0.5em',
     },
     '& .search': {
-      marginRight: '8px',
+      marginRight: '0.5em',
     },
     '& .routing': {
-      marginRight: '12px',
+      marginRight: '1em',
       color: 'white',
       '& > span': {
         cursor: 'pointer',
-        marginLeft: '8px',
+        marginLeft: '0.5em',
       },
       '& > span:first-child': {
-        marginLeft: '0px',
+        marginLeft: '0',
       },
     },
   },

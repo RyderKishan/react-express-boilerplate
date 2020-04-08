@@ -17,7 +17,7 @@
 .showSearch {
   animation: expand 0.4s;
   width: 256px;
-  margin-right: 8px;
+  margin-right: 0.5em;
 }
 
 @keyframes expand {

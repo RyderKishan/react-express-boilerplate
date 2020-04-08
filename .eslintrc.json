@@ -11,6 +11,7 @@
     "document": true,
     "test": true,
     "it": true,
+    "browser": true,
     "expect": true,
     "jest": true,
     "beforeEach": true,

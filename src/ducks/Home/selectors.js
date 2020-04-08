@@ -1,9 +1,9 @@
 import * as R from 'ramda';
 
 const posts = (state) => R.pathOr([], ['home', 'posts'], state);
-const feed = (state) => R.pathOr([], ['home', 'feed'], state);
+const isPostFetching = (state) => R.pathOr(false, ['home', 'isPostFetching'], state);
 
 export {
   posts,
-  feed,
+  isPostFetching,
 };

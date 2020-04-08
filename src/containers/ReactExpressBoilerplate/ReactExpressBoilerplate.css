@@ -1,6 +1,6 @@
 body {
   font-family: 'Futura BK BT', Arial, sans-serif !important;
-  font-size: 14px;
+  font-size: 1em;
   margin: 0;
   height: 100vh;
   width: 100vw;
@@ -13,21 +13,32 @@ body {
   width: 100%;
 }
 
-.App {
+.ReactExpressBoilerplate {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  height: 70px;
+  height: 5em;
   background: #0D475E;
-  padding: 0 16px;
+  padding: 0 1em;
   color: white;
 }
 
-article {
-  height: calc(100% - 70px);
+footer {
+  height: 3em;
+  color: white;
+  background: #0D475E;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 11px;
+}
+
+article {
+  flex: 1;
   overflow: auto;
 }
 

@@ -1,10 +1,28 @@
 .Home {
-  padding: 16px;
   flex: 1;
+  display: flex;
+  padding: 1em;
+  min-height: calc(100% - 4em);
+  flex-direction: column;
 }
 
-.Spin-Container {
-  height: 100%;
+.make-center {
+  width: 100%;
   place-content: center;
   display: grid;
+}
+
+.Home > .actions {
+  margin-bottom: 1em;
+}
+
+.Home > .actions > button {
+  margin-right: 1em;
+  color: white;
+  background-color: #0D475E;
+}
+
+.Home > .results {
+  flex: 1;
+  display: flex;
 }

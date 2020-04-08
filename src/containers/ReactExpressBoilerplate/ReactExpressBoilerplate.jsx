@@ -5,12 +5,12 @@ import { withRouter, Route, Switch } from 'react-router-dom';
 import * as Actions from '../../ducks/App/actions';
 import * as Selectors from '../../ducks/App/selectors';
 
-import './App.css';
+import './ReactExpressBoilerplate.css';
 import Home from '../Home';
 import Header from '../../components/Header';
 import FallBack from '../../components/FallBack';
 
-const App = () => {
+const ReactExpressBoilerplate = () => {
   const dispatch = useDispatch();
   const getUserDetails = () => dispatch(Actions.getUserDetails());
   const {
@@ -23,7 +23,7 @@ const App = () => {
     getUserDetails();
   }, []);
   return (
-    <div className="App">
+    <div className="ReactExpressBoilerplate">
       <header>
         <Header appName="React Webpack" userDetails={userDetails} />
       </header>
@@ -34,9 +34,12 @@ const App = () => {
           <Route path="/about" render={() => <div className="Profile">Profile</div>} />
           <Route component={FallBack} />
         </Switch>
+        <footer>
+          C @ Balkishan S
+        </footer>
       </article>
     </div>
   );
 };
 
-export default withRouter(App);
+export default withRouter(ReactExpressBoilerplate);

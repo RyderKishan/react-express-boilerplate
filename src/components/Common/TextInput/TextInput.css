@@ -1,10 +1,10 @@
 .REB-input {
   height: 32px;
   flex: 1;
-  border-radius: 8px;
-  padding: 0 12px 2px 12px;
+  border-radius: 0.5em;
+  padding: 0 1em 2px 1em;
   outline: none;
   outline-offset: unset;
-  font-size: 14px;
+  font-size: 1em;
   border: none;
 }

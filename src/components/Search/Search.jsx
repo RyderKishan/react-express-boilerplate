@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 import SearchIcon from '@material-ui/icons/Search';
@@ -20,7 +21,7 @@ const Search = () => {
   // const classes = useStyles();
   return (
     <div className="root">
-      <div className={`searchArea ${showSearchBox ? 'showSearch' : ''}`}>
+      <div className={`searchArea ${showSearchBox ? 'showSearch' : ''}`.trim()}>
         <TextInput
           placeholder="Search"
           type="search"
