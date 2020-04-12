@@ -32,6 +32,9 @@ const Home = () => {
       <div className="actions">
         <Button
           id="fetch-results"
+          classes={{
+            disabled: classes.disabled,
+          }}
           disabled={isPostFetching}
           variant="contained"
           color="primary"
@@ -41,6 +44,9 @@ const Home = () => {
         </Button>
         <Button
           id="clear-results"
+          classes={{
+            disabled: classes.disabled,
+          }}
           disabled={posts && posts.length <= 0}
           variant="contained"
           color="primary"

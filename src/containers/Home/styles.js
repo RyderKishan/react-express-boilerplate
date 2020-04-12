@@ -16,6 +16,9 @@ const useStyles = makeStyles({
   progress: {
     color: '#0D475E',
   },
+  disabled: {
+    color: 'grey !important',
+  },
 });
 
 export default useStyles;
