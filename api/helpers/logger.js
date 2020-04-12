@@ -11,7 +11,7 @@ const logFormat = winston.format.combine(
 );
 
 const logger = winston.createLogger({
-  level: 'info',
+  level: 'debug',
   format: logFormat,
   transports: [
     new winston.transports.File({

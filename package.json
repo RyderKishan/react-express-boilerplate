@@ -4,9 +4,8 @@
   "description": "Boilerplate code for React with express",
   "main": "index.js",
   "scripts": {
-    "wdio": "wdio wdio.conf.js",
+    "test:features": "wdio wdio.conf.js",
     "test": "jest --forceExit -c jest.config.js",
-    "clean": "rm -rf build",
     "server": "nodemon api/server.js",
     "server:prod": "node build/server.js",
     "client": "webpack-dev-server --config webpack.dev.js",

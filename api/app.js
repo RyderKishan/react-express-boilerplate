@@ -8,11 +8,16 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const Logger = require('./helpers/logger');
+const Stubs = require('./stubs');
 // const auth = require('./auth');
 const routes = require('./routes');
 
 const HTML_FILE = path.join(__dirname, '../build/index.html');
 const app = express();
+
+const { MOCK, MOCK_DELAY = '0' } = process.env;
+const mock = MOCK === 'true';
+const mockDelay = parseInt(MOCK_DELAY, 10);
 
 app.use((req, res, next) => {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
@@ -44,6 +49,18 @@ app.use(morgan((tokens, req, res) => JSON.stringify({
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '../build')));
+
+app.use((req, res, next) => {
+  const { url } = req;
+  if (mock && Stubs[url]) {
+    Logger.debug(`Mocking url - ${url}`);
+    setTimeout(() => {
+      res.json(Stubs[url]);
+    }, mockDelay);
+  } else {
+    next();
+  }
+});
 
 routes.bind(app);
 

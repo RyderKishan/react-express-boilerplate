@@ -10,7 +10,7 @@ exports.config = {
     browserName: 'chrome',
   }],
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'trace',
+  logLevel: 'error',
   bail: 0,
   baseUrl: 'http://localhost:7400',
   waitforTimeout: 10000,
@@ -44,9 +44,7 @@ exports.config = {
     profile: [],
     // <string[]> (file/dir) require files before executing features
     require: [
-      './test/steps/given.js',
-      './test/steps/then.js',
-      // './test/steps/when.js',
+      './test/steps/*.js',
       // Or search a (sub)folder for JS files with a wildcard
       // works since version 1.1 of the wdio-cucumber-framework
       // './src/**/*.js',

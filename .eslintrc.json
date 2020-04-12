@@ -11,6 +11,8 @@
     "document": true,
     "test": true,
     "it": true,
+    "$": true,
+    "$$": true,
     "browser": true,
     "expect": true,
     "jest": true,

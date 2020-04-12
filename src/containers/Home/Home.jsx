@@ -51,7 +51,7 @@ const Home = () => {
       </div>
       <div className="results">
         {
-          !isPostFetching > 0 ? (
+          !isPostFetching ? (
             <div className={classes.postContainer}>
               {
                 posts && posts.length > 0 ? posts.map((post) => (
