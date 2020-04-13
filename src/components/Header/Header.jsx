@@ -2,26 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import { useHistory } from 'react-router-dom';
-import useStyles from './styles';
 import './Header.css';
 import Search from '../Search/Search';
 
 const Header = ({ userDetails }) => {
   const history = useHistory();
-  const classes = useStyles();
   const logoText = userDetails && userDetails.name && userDetails.name.slice(0, 1);
   return (
-    <div className={classes.root}>
-      <div>
+    <div className="Header">
+      <div className="image-container">
         <img
           alt="logo"
-          className={classes.image}
           role="none"
           onClick={() => history.push('/')}
           src="/public/images/gk_tag.png"
         />
       </div>
-      <div className={classes.loginUser}>
+      <div className="loginUser">
         <div className="routing">
           <span onClick={() => history.push('/about')} role="none">
             About

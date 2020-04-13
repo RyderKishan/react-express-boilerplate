@@ -26,3 +26,22 @@
   flex: 1;
   display: flex;
 }
+
+.actions > button[disabled] {
+ color: gray;
+}
+
+.results .postContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.postContainer .MuiPaper-root {
+  max-width: 345px;
+  margin: 0.5em;
+}
+
+.make-center .MuiCircularProgress-root {
+  color: #0D475E;
+}

@@ -4,192 +4,70 @@ exports[`<Home /> - Snapshot Tests Snapshot 1`] = `
 <div
   className="Home"
 >
-  Home
   <div
-    className="makeStyles-postContainer-3"
+    className="actions"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      disabled={false}
+      id="fetch-results"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Fetch Results
+      </span>
+    </button>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+      disabled={true}
+      id="clear-results"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Clear Results
+      </span>
+    </button>
+  </div>
+  <div
+    className="results"
   >
     <div
-      className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+      className="postContainer"
     >
-      <button
-        className="MuiButtonBase-root MuiCardActionArea-root"
-        disabled={false}
-        onBlur={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <div
-          className="MuiCardContent-root"
-        >
-          <h2
-            className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
-          >
-            optio molestias id quia eum
-          </h2>
-          <p
-            className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
-          >
-            quo et expedita modi cum officia vel magni
-doloribus qui repudiandae
-vero nisi sit
-quos veniam quod sed accusamus veritatis error
-          </p>
-        </div>
-        <span
-          className="MuiCardActionArea-focusHighlight"
-        />
-      </button>
       <div
-        className="MuiCardActions-root MuiCardActions-spacing"
+        className="make-center"
       >
-        <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
-          disabled={false}
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span
-            className="MuiButton-label"
-          >
-            Share
-          </span>
-        </button>
-        <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
-          disabled={false}
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span
-            className="MuiButton-label"
-          >
-            Learn More
-          </span>
-        </button>
-      </div>
-    </div>
-    <div
-      className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
-    >
-      <button
-        className="MuiButtonBase-root MuiCardActionArea-root"
-        disabled={false}
-        onBlur={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <div
-          className="MuiCardContent-root"
-        >
-          <h2
-            className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
-          >
-            in quibusdam tempore odit est dolorem
-          </h2>
-          <p
-            className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
-          >
-            itaque id aut magnam
-praesentium quia et ea odit et ea voluptas et
-sapiente quia nihil amet occaecati quia id voluptatem
-incidunt ea est distinctio odio
-          </p>
-        </div>
-        <span
-          className="MuiCardActionArea-focusHighlight"
-        />
-      </button>
-      <div
-        className="MuiCardActions-root MuiCardActions-spacing"
-      >
-        <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
-          disabled={false}
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span
-            className="MuiButton-label"
-          >
-            Share
-          </span>
-        </button>
-        <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
-          disabled={false}
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span
-            className="MuiButton-label"
-          >
-            Learn More
-          </span>
-        </button>
+        No Results
       </div>
     </div>
   </div>

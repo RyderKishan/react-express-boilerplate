@@ -31,7 +31,7 @@ const ReactExpressBoilerplate = () => {
         <Switch>
           <Route path="/" exact render={() => <Home />} />
           <Route path="/contact" render={() => <div className="Contact">Contact</div>} />
-          <Route path="/about" render={() => <div className="Profile">Profile</div>} />
+          <Route path="/about" render={() => <div className="About">About</div>} />
           <Route component={FallBack} />
         </Switch>
         <footer>

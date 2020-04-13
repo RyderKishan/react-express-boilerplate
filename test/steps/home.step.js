@@ -27,7 +27,7 @@ Then('I see the Home container', async () => {
 });
 
 Then('I see the actions class element', async () => {
-  const element = await support.isDisplayed('.makeStyles-postContainer-23');
+  const element = await support.isDisplayed('.postContainer');
   expect(element).toBe(true);
 });
 
@@ -54,7 +54,7 @@ Then('I see Clear Results Button', async () => {
 });
 
 Then('I see the results class element', async () => {
-  const element = await support.isDisplayed('.makeStyles-postContainer-23');
+  const element = await support.isDisplayed('.postContainer');
   expect(element).toBe(true);
 });
 
@@ -74,7 +74,7 @@ Then('I see the loader', async () => {
 });
 
 Then('I see the results populated', async () => {
-  const element = await support.getElementBySelector('.makeStyles-postContainer-23 .MuiPaper-root');
+  const element = await support.getElementBySelector('.postContainer .MuiPaper-root');
   await element.waitForExist(3000);
   expect(await element.isDisplayed()).toBe(true);
 });
@@ -85,8 +85,8 @@ Then('I see Clear Results Button Enabled', async () => {
 });
 
 Then('I enter text', async () => {
-  const element = await support.getElementBySelector('.makeStyles-loginUser-4 .search .root .MuiSvgIcon-root');
-  const input = await support.getElementBySelector('.makeStyles-loginUser-4 .search .root .searchArea input');
+  const element = await support.getElementBySelector('.loginUser .search .root .MuiSvgIcon-root');
+  const input = await support.getElementBySelector('.loginUser .search .root .searchArea input');
   element.click();
   input.setValue('Then I see the header elementThen I see the header elementThen I see the header element');
 });

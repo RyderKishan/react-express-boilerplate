@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { render, mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 
-import App from '.';
+import ReactExpressBoilerplate from '.';
 import * as Actions from '../../ducks/App/actions';
 import Mocks from '../../../api/stubs/mocks';
 
@@ -17,22 +17,22 @@ jest.mock('react-redux', () => ({
   }),
 }));
 
-describe('<App /> - Hooks Test', () => {
+describe('<ReactExpressBoilerplate /> - Hooks Test', () => {
   const wrapper = mount(
     <MemoryRouter>
-      <App />
+      <ReactExpressBoilerplate />
     </MemoryRouter>,
   );
   it('useEffect', () => {
-    expect(wrapper.find('.App').exists()).toBe(true);
+    expect(wrapper.find('.ReactExpressBoilerplate').exists()).toBe(true);
     expect(mockDispatch).toHaveBeenCalledWith(Actions.getUserDetails());
   });
 });
 
-describe('<App /> - Snapshot Tests Renderer', () => {
+describe('<ReactExpressBoilerplate /> - Snapshot Tests Renderer', () => {
   const tree = renderer.create(
     <MemoryRouter>
-      <App />
+      <ReactExpressBoilerplate />
     </MemoryRouter>,
   );
   it('Snapshot renderer', () => {
@@ -42,11 +42,11 @@ describe('<App /> - Snapshot Tests Renderer', () => {
 
 const linkRenderer = (link) => render(
   <MemoryRouter initialEntries={[link]}>
-    <App />
+    <ReactExpressBoilerplate />
   </MemoryRouter>,
 );
 
-describe('<App /> - Route Tests', () => {
+describe('<ReactExpressBoilerplate /> - Route Tests', () => {
   it('Render Home Container', () => {
     const wrapper = linkRenderer('/');
     expect(wrapper.find('article')).toHaveLength(1);
@@ -57,10 +57,10 @@ describe('<App /> - Route Tests', () => {
     expect(wrapper.find('article')).toHaveLength(1);
     expect(wrapper.find('.Contact')).toHaveLength(1);
   });
-  it('Render Profile Container', () => {
-    const wrapper = linkRenderer('/profile');
+  it('Render About Container', () => {
+    const wrapper = linkRenderer('/about');
     expect(wrapper.find('article')).toHaveLength(1);
-    expect(wrapper.find('.Profile')).toHaveLength(1);
+    expect(wrapper.find('.About')).toHaveLength(1);
   });
   it('Render FallBack Container', () => {
     const wrapper = linkRenderer('/error');

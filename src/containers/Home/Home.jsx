@@ -11,11 +11,9 @@ import Typography from '@material-ui/core/Typography';
 import * as Actions from '../../ducks/Home/actions';
 import * as Selectors from '../../ducks/Home/selectors';
 
-import useStyles from './styles';
 import './Home.css';
 
 const Home = () => {
-  const classes = useStyles();
   const dispatch = useDispatch();
   const getPosts = () => dispatch(Actions.getPosts());
   const setPosts = (posts) => dispatch(Actions.setPosts(posts));
@@ -24,6 +22,7 @@ const Home = () => {
     isPostFetching: Selectors.isPostFetching(state),
   }),
   shallowEqual);
+  console.log('{ posts, isPostFetching }', { posts, isPostFetching });
   // useEffect(() => {
   //   getPosts();
   // }, []);
@@ -32,9 +31,6 @@ const Home = () => {
       <div className="actions">
         <Button
           id="fetch-results"
-          classes={{
-            disabled: classes.disabled,
-          }}
           disabled={isPostFetching}
           variant="contained"
           color="primary"
@@ -44,9 +40,6 @@ const Home = () => {
         </Button>
         <Button
           id="clear-results"
-          classes={{
-            disabled: classes.disabled,
-          }}
           disabled={posts && posts.length <= 0}
           variant="contained"
           color="primary"
@@ -58,10 +51,10 @@ const Home = () => {
       <div className="results">
         {
           !isPostFetching ? (
-            <div className={classes.postContainer}>
+            <div className="postContainer">
               {
                 posts && posts.length > 0 ? posts.map((post) => (
-                  <Card className={classes.root} key={post.id}>
+                  <Card key={post.id}>
                     <CardActionArea>
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
@@ -90,7 +83,7 @@ const Home = () => {
             </div>
           ) : (
             <div className="make-center">
-              <CircularProgress className={classes.progress} />
+              <CircularProgress />
             </div>
           )
         }

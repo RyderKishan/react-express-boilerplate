@@ -1,18 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> - Snapshot Tests Renderer Snapshot renderer 1`] = `
+exports[`<ReactExpressBoilerplate /> - Snapshot Tests Renderer Snapshot renderer 1`] = `
 <div
-  className="App"
+  className="ReactExpressBoilerplate"
 >
   <header>
     <div
-      className="makeStyles-root-1"
+      className="Header"
     >
-      <div>
-        React Webpack
+      <div
+        className="image-container"
+      >
+        <img
+          alt="logo"
+          onClick={[Function]}
+          role="none"
+          src="/public/images/gk_tag.png"
+        />
       </div>
-      <div>
-        Login User
+      <div
+        className="loginUser"
+      >
+        <div
+          className="routing"
+        >
+          <span
+            onClick={[Function]}
+            role="none"
+          >
+            About
+          </span>
+          <span
+            onClick={[Function]}
+            role="none"
+          >
+            Contact Us
+          </span>
+        </div>
+        <div
+          className="search"
+        >
+          <div
+            className="Search"
+          >
+            <div
+              className="searchArea"
+            >
+              <input
+                className="REB-input"
+                disabled={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="Search"
+                required={true}
+                size={null}
+                type="search"
+              />
+            </div>
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root"
+              focusable="false"
+              onClick={[Function]}
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+            </svg>
+          </div>
+        </div>
+        <span>
+          Login User
+        </span>
+        <div
+          className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+        >
+          L
+        </div>
       </div>
     </div>
   </header>
@@ -22,11 +89,77 @@ exports[`<App /> - Snapshot Tests Renderer Snapshot renderer 1`] = `
     <div
       className="Home"
     >
-      Home
       <div
-        className="makeStyles-postContainer-5"
-      />
+        className="actions"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+          disabled={false}
+          id="fetch-results"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Fetch Results
+          </span>
+        </button>
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+          disabled={false}
+          id="clear-results"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Clear Results
+          </span>
+        </button>
+      </div>
+      <div
+        className="results"
+      >
+        <div
+          className="postContainer"
+        >
+          <div
+            className="make-center"
+          >
+            No Results
+          </div>
+        </div>
+      </div>
     </div>
+    <footer>
+      C @ Balkishan S
+    </footer>
   </article>
 </div>
 `;
