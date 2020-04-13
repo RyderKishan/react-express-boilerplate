@@ -22,10 +22,6 @@ const Home = () => {
     isPostFetching: Selectors.isPostFetching(state),
   }),
   shallowEqual);
-  console.log('{ posts, isPostFetching }', { posts, isPostFetching });
-  // useEffect(() => {
-  //   getPosts();
-  // }, []);
   return (
     <div className="Home">
       <div className="actions">
@@ -83,7 +79,7 @@ const Home = () => {
             </div>
           ) : (
             <div className="make-center">
-              <CircularProgress />
+              <CircularProgress id="posts-loading" />
             </div>
           )
         }
